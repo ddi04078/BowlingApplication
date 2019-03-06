@@ -10,7 +10,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    let scores = ["A","B","C","D","E"]
+    var scores = ["A","B","C","D","E"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,17 +58,19 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            // 데이터 삭제
+            scores.remove(at: indexPath.row)
+            // Data source로 부터 row 삭제
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
